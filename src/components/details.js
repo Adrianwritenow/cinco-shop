@@ -109,6 +109,7 @@ class Details extends Component {
               <h1>Cinco Shop</h1>
           </div>
           <View details={this.state.details} endpoint={this.state.endpoint} id={this.state.pId}/>
+          <Cart cart=this.state.cart>
         </div>
       </div>
     );
