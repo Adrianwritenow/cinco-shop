@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-repeat: no-repeat;
+  background-size: auto;
+  width:1280px;
+  background-color: black;
+  background-position: top;
+  background-position-y: 50px;
+}
+
+.navbar-nav{
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.container-fluid{
+  justify-content: center;
+
+}
+.app-body{
+  height: inherit;
+}
+
+li{
+  margin-left: 100px;
+}
+footer{
+  position: absolute;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   padding: 1rem;
+   background-color: #efefef;
+   text-align: center;
+}
+
+.headings{
+  margin-top: 20px;
+}
+
+.card{
+  margin-top: 30px;
+  margin-top: 74px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.row{
+  justify-content: center;
+}
+
+.navbar-header{
+  margin-left: -75px;
+}
+img{
+  object-fit: cover;
+  margin-top: 80px;
+  width: 650px;
+  height: 570px;
+  margin-bottom: -156px;
+}
+.app-body{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+}
+.container-fluid{
+  padding-right: 0px;
+}
+
+.row{
+  margin-bottom: 30px;
+}
+#root{
+  margin-bottom: -28px;
+}
+
+.profile{
+  width:800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+dd{
+  width: 300px;
+}
+
+iframe{
+  margin-top: 15px;
+}
