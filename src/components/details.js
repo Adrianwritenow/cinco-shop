@@ -3,35 +3,14 @@ import { Link } from 'react-router-dom';
 const data = require('../data/data.js');
 
 class View extends Component {
-  constructor(props) {
-  super(props);
-    this.state = {
-      'cart': []
-  }
-    this.addToList = this.addToList.bind(this);
-  }
 
-  addToList = (e) => {
-    e.preventDefault();
-    let data = this.props.details;
-    let pId = this.props.id;
-    let endpoint = this.props.endpoint;
 
-    let List = data.map((product,index)=>{
-      if (product.id === pId) {
-        let cart = this.state.cart;
-        cart.push(product)
-        this.setState({ cart: cart })
-        console.log("im your cart",this.state.cart);
-      }
-    });
-  }
   render(){
-    let data = this.props.details;
+    let details = this.props.details;
     let pId = this.props.id;
     let endpoint = this.props.endpoint;
 
-    let List = data.map((product,index)=>{
+    let List = details.map((product,index)=>{
       if (product.id === pId) {
       return (
         <div key={product.name} className="col-lg-10 col-lg-offset-1 card">
@@ -46,7 +25,7 @@ class View extends Component {
                 <dt>Cost</dt>
                 <dd>{product.cost}</dd>
               </dl>
-              <button onClick={this.addToList}>ADD TO CART</button>
+              <button onClick={this.props.handleClick}>ADD TO CART</button>
               </form>
             </div>
 
@@ -71,6 +50,16 @@ class Details extends Component {
       'endpoint':'',
       'pId':'',
     }
+
+  }
+  handleClick = (e) => {
+    e.preventDefault();
+    let data = this.state.details;
+    let pId = this.state.pId;
+    let endpoint = this.state.endpoint;
+
+    this.props.add(data,pId,endpoint);
+    
   }
 
   componentDidMount() {
@@ -108,8 +97,7 @@ class Details extends Component {
           <div className="col-lg-8 col-lg-offset-2">
               <h1>Cinco Shop</h1>
           </div>
-          <View details={this.state.details} endpoint={this.state.endpoint} id={this.state.pId}/>
-          <Cart cart=this.state.cart>
+          <View details={this.state.details} endpoint={this.state.endpoint} id={this.state.pId} handleClick={this.handleClick}/>
         </div>
       </div>
     );
